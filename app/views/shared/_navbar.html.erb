@@ -20,5 +20,26 @@
         </div>
     </ul>
      <%= link_to("Rechercher",search_path,class: "btn btn-primary") %>
+     <% if user_signed_in? %>
+
+        <li>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar-list-4">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-5">
+                  <%# <a class="dropdown-item" href="profile/">Profile</a> %>
+                  <a class="dropdown-item"></a>
+                  <a class="dropdown-item"><%= link_to "Deconnexion", destroy_user_session_path, method: :delete %></a>
+                </div>
+              </li>   
+            </ul>
+          </div>
+        </li>
+      <% end %>
   </div>
 </nav>
