@@ -41,14 +41,4 @@ class ProductsController < ApplicationController
     def destroy
     @product.destroy
     end
-
-    private
-
-    def find_product
-        @product = Product.find(params[:id])
-    end
-
-    def product_params
-        params.requis(:product).permit(:name, :description, :photo)
-    end
 end

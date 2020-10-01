@@ -10,7 +10,7 @@ class StrigowlsController < ApplicationController
         @strigowl.user = current_user
         if @strigowl.save
             UserMailer.with(strigowl: @strigowl, user: current_user).confirmation.deliver_now
-            redirect_to profile_path
+            redirect_to profiles_path
         else
             redirect_to products_path
         end

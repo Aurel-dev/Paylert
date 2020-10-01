@@ -13,14 +13,5 @@ class ProfilesController < ApplicationController
     def new
       @strigowl = Strigowl.new
     end
-  
-    def add_credit_card
-      current_user.create_stripe_customer_id!
-      payment_intent = Stripe::PaymentIntent.create({
-          amount: 1099,
-          currency: 'usd',
-          customer: current_user.stripe_customer_id,
-      })
-      @client_secret = payment_intent["client_secret"]
-    end
-  end
+
+end
